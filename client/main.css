@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.page-title {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 26px;
+    color: rgb(28, 105, 206);
+}
+
+.nav {
+    display: flex;   
+    background-color: rgb(28, 105, 206);
+    color: white;
+    padding: 10px;
+    
+}
+.nav > li {
+    flex: 1 1 50%;
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+}
+
+.projects-table {
+    display: block;
+    max-width: 1200px;
+    margin: 20px auto 0;
+}
+.projects-header {
+    display: flex;
+}
+.projects-header > th {
+    flex: 1 1 30%;
+    text-align: left;
+}
+
+.projects {
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color:rgb(170, 166, 166);
+}
+
+.project {
+    display: flex;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color:rgb(170, 166, 166);
+    cursor: pointer;
+}
+
+.project:hover {
+    background-color: rgb(28, 105, 206);
+    color: white;
+}
+
+.project > div {
+    padding: 10px 5px;
+}
+
+.project > div:nth-child(1) {
+    flex: 1 1 30%;
+}
+
+.project > div:nth-child(2) {
+    flex: 1 1 30%;
+}
+
+.project > div:nth-child(3) {
+    flex: 1 1 30%;
+}

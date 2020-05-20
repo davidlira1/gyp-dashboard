@@ -1,0 +1,30 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate_data": "node db/simulated-dataset/generate_data.js",
+    "load-data": "mongoimport --db gypfill --collection projects --drop --file C:/Users/lirad/Documents/coding/Gyp-Fill-Enterprise/dashboard/db/simulated-dataset/projects_data.txt",
+    "start": "nodemon server/index.js",
+    "webpack": "webpack -d --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^3.5.3",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongoose": "^5.9.14",
+    "puppeteer": "^3.1.0",
+    "style-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
