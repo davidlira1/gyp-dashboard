@@ -59,19 +59,19 @@ const load_to_postgreSQL = () => {
         console.log('Created table projects_companies');
         
         return client.query(
-            `COPY projects FROM '${__dirname}\\projects_data.txt' WITH CSV HEADER`
+            `COPY projects FROM '${__dirname}/projects_data.txt' WITH CSV HEADER`
         )
     })
     .then(() => {
         console.log('Populated projects table with data!');
         return client.query(
-            `COPY companies FROM '${__dirname}\\companies_data.txt' WITH CSV HEADER`
+            `COPY companies FROM '${__dirname}/companies_data.txt' WITH CSV HEADER`
         )
     })
     .then(() => {
         console.log('Populated companies table with data!');
         return client.query(
-            `COPY projects_companies FROM '${__dirname}\\projects_companies_data.txt' WITH CSV HEADER`
+            `COPY projects_companies FROM '${__dirname}/projects_companies_data.txt' WITH CSV HEADER`
         );
     })
     .then(() => {
