@@ -37,7 +37,7 @@
     display: flex;
 }
 .projects-header > th {
-    flex: 1 1 30%;
+    flex: 1 1 33.33%;
     text-align: left;
 }
 
@@ -62,16 +62,17 @@
 
 .project > div {
     padding: 10px 5px;
+    flex: 1 1 25%;
 }
 
-.project > div:nth-child(1) {
-    flex: 1 1 30%;
+/* .project > div:nth-child(1) {
+    flex: 1 1 33.33%;
 }
 
 .project > div:nth-child(2) {
-    flex: 1 1 30%;
+    flex: 1 1 33.33%;
 }
 
 .project > div:nth-child(3) {
-    flex: 1 1 30%;
-}
+    flex: 1 1 33.33%;
+} */

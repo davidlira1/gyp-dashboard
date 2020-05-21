@@ -1,4 +1,5 @@
 import Projects from './Projects';
+import './../../styles/View_Projects.css';
 
 class View_Projects extends React.Component {
     constructor(props) {
@@ -11,6 +12,17 @@ class View_Projects extends React.Component {
         this.search_project = this.search_project.bind(this);
     }
 
+    componentDidMount() {
+        fetch('http://localhost:3000/projects/1/*')
+        .then(response => response.json())
+        .then(results => {
+            console.log(results);
+            this.setState(
+                {searched_projects : results}
+            )
+        })
+    }
+
     change_input(ev, key) {
         var value = ev.currentTarget.value;
         this.setState({
@@ -20,7 +32,7 @@ class View_Projects extends React.Component {
 
     search_project(ev) {
         ev.preventDefault();
-        fetch(`http://localhost:3000/project/${this.state.input_search}`)
+        fetch(`http://localhost:3000/projects/0/${this.state.input_search}`)
         .then(response => response.json())
         .then(results => {
             this.setState(
@@ -32,7 +44,7 @@ class View_Projects extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.search_project}>
+                <form className="search" onSubmit={this.search_project}>
                     <input type="input" value={this.state.input_search} onChange={(ev) => this.change_input(ev, 'input_search')}/>
                     <input type="submit"/>
                 </form>

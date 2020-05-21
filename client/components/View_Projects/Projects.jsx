@@ -7,6 +7,7 @@ var Projects = (props) => {
                 <th>Street</th>
                 <th>City</th>
                 <th>Company</th>
+                <th>Price</th>
             </tr>
             <ul className="projects">
                 {props.searched_projects.map((searched_project, idx) => {

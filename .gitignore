@@ -1,2 +1,4 @@
 node_modules
-
+db/simulated-dataset/projects_data.txt
+db/simulated-dataset/companies_data.txt
+db/simulated-dataset/projects_companies_data.txt
