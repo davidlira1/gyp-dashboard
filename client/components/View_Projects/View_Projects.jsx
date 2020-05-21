@@ -13,7 +13,7 @@ class View_Projects extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/projects/1/*')
+        fetch('http://ec2-18-144-38-149.us-west-1.compute.amazonaws.com:3000/projects/1/*')
         .then(response => response.json())
         .then(results => {
             console.log(results);
@@ -32,7 +32,7 @@ class View_Projects extends React.Component {
 
     search_project(ev) {
         ev.preventDefault();
-        fetch(`http://localhost:3000/projects/0/${this.state.input_search}`)
+        fetch(`http://ec2-18-144-38-149.us-west-1.compute.amazonaws.com:3000/projects/0/${this.state.input_search}`)
         .then(response => response.json())
         .then(results => {
             this.setState(
