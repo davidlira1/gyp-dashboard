@@ -24,11 +24,13 @@ class App extends React.Component {
     render() {
         var views = {
             'View_Dashboard':       <View_Dashboard
-                                        set_appState={this.set_appState}/>,
+                                        set_appState={this.set_appState}
+                                        host={this.props.host}/>,
 
             'View_Projects':        <View_Projects 
                                         set_appState={this.set_appState}
-                                        chng_input={this.chng_input}/>,
+                                        chng_input={this.chng_input}
+                                        host={this.props.host}/>,
 
             'View_Project':         <View_Project
                                         set_appState={this.set_appState}

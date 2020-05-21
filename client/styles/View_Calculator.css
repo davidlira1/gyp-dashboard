@@ -1,3 +1,11 @@
 .calculator-container {
     margin: 20px 20px 0;
 }
+
+.calculator-section {
+    display:flex;
+}
+
+.calculator-section > label {
+   width: 100px;
+}

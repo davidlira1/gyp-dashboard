@@ -1,45 +1,42 @@
-// import Projects from './Projects';
+import Gyp from './Gyp';
 import './../../styles/View_Calculator.css'
 
 class View_Calculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            SF: 0,
-            thick: 0,
-            soundMat: 0
+            gypSections: 2
         }
-        //this.change_input = this.change_input.bind(this);
+        this.change_gypSections = this.change_gypSections.bind(this);
         
     }
 
-    change_input(ev, key) {
-        var value = ev.currentTarget.value;
-        this.setState({
-            [key]: value
-        })
+
+    change_gypSections(ev) {
+        var action = ev.currentTarget.id;
+        console.log(action);
+        var newGypSections = action === 'add' ? ++this.state.gypSections : --this.state.gypSections;
+    
+        this.setState({gypSections: newGypSections})
+         
     }
 
-
-
     render() {
+        console.log(this.state.gypSections)
+        var gypSections = [];
+        for (var i = 0; i < this.state.gypSections; i++) {
+            gypSections.push(<Gyp />);
+        }
+
         return (
             <div className="calculator-container">
-                <h1>Calculator</h1>
-                <form >
-                    <label>SF
-                        <input type="text" value={this.state.SF} onChange={(ev) => this.change_input(ev, 'SF')}/>
-                    </label>
-                    <label>Thickness
-                        <input type="text" value={this.state.thick} onChange={(ev) => this.change_input(ev, 'thick')}/>
-                    </label>
-                    <label>SoundMat
-                        <input type="text" value={this.state.soundMat} onChange={(ev) => this.change_input(ev, 'soundMat')}/>
-                    </label>
-                 
-                    <input type="submit" value="Save"/>
-                    
-                </form>
+                <div>
+                    <button id="add" onClick={this.change_gypSections}>+</button>
+                    <button id="subtract" onClick={this.change_gypSections}>-</button>
+                    <p>Gypsum Concrete</p>
+                </div>
+
+                {gypSections}
 
                 <button onClick={() => this.props.set_appState({view: 'View_Proposal'})}>Proposal</button>
             </div>

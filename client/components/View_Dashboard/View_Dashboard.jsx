@@ -10,7 +10,7 @@ class View_Dashboard extends React.Component {
     }
 
     componentDidMount() {//18.144.38.149
-        fetch('http://3.101.75.130:3000/companies/top10Bidders')
+        fetch(`http://${this.props.host}:3000/companies/top10Bidders`)
         .then(response => response.json())
         .then(results => {
             var companies = [];
