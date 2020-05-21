@@ -4,7 +4,7 @@ const load_to_postgreSQL = () => {
         user: 'postgres',
         password: 'pw',
         port: 5432,
-        host: 'ec2-18-144-38-149.us-west-1.compute.amazonaws.com'
+        host: 'localhost'
     });
     
     client.connect();
