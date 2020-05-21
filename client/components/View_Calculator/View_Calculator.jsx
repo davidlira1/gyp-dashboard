@@ -5,7 +5,7 @@ class View_Calculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            gypSections: 2
+            gypSections: 0
         }
         this.change_gypSections = this.change_gypSections.bind(this);
         
