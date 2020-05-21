@@ -2,9 +2,7 @@ const load_to_postgreSQL = () => {
     const { Client } = require('pg');
     var client = new Client({
         user: 'postgres',
-        password: 'pw',
-        port: 5432,
-        host: 'localhost'
+        password: 'pw'
     });
     
     client.connect();
