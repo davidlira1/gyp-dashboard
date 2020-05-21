@@ -6,7 +6,7 @@ var Projects = (props) => {
                             ? companies[0].name
                             : `${companies[0].name} +${companies.length - 1}`;
     return (
-        <li className='project' onClick={() => props.set_appState( {currentProject: props.project, view: 'View_Project_Profile'} )}>
+        <li className='project' onClick={() => props.set_appState( {currentProject: props.project, view: 'View_Project'} )}>
             <div>{street}</div>
             <div>{city}</div>
             <div>{companiesCol}</div>

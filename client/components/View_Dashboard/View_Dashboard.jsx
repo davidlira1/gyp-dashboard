@@ -9,7 +9,7 @@ class View_Dashboard extends React.Component {
         // this.set_appState = this.set_appState.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount() {//18.144.38.149
         fetch('http://18.144.38.149:3000/companies/top10Bidders')
         .then(response => response.json())
         .then(results => {
@@ -32,8 +32,6 @@ class View_Dashboard extends React.Component {
         }
         companyView = companyView.bind(this);
         console.log(labels, data)
-        // var labels = ['Swinerton', 'Hy-Max', 'Frymer', 'Frost', 'Marshall', '2433', '24343', 'aergweh', 'werwer', 'werwer'];
-        // var data = [126000,225000,200000,82000,129000,34534,45647,34545,345345];
         var ctx = document.getElementById('chart').getContext('2d');
         var chart = new Chart(ctx, {
             type: 'bar',

@@ -2,3 +2,10 @@
     position: relative;
     width: 45vw;
 }
+
+@media only screen and (max-width:768px) {
+    .chart-container {
+        width: 100vw;
+    }
+}
+

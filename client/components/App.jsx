@@ -1,6 +1,6 @@
 import View_Dashboard from './View_Dashboard/View_Dashboard';
 import View_Projects from './View_Projects/View_Projects';
-import View_Project_Profile from './View_Project_Profile/View_Project_Profile';
+import View_Project from './View_Project/View_Project';
 import View_Calculator from './View_Calculator/View_Calculator';
 import View_Proposal from './View_Proposal/View_Proposal';
 import View_Company from './View_Company/View_Company';
@@ -30,7 +30,7 @@ class App extends React.Component {
                                         set_appState={this.set_appState}
                                         chng_input={this.chng_input}/>,
 
-            'View_Project_Profile': <View_Project_Profile
+            'View_Project':         <View_Project
                                         set_appState={this.set_appState}
                                         project={this.state.currentProject}/>,
 

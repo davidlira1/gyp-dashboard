@@ -6,7 +6,7 @@ const generate_projects = () => {
     var projectsData = 'id,street,city,zip,state,price\n';
     for (var i = 0; i < 2000; i++) {
         var price = randomNum(20000,180000);
-        projectsData+= `${i+1},"${faker.address.streetAddress()}","${faker.address.city()}","${faker.address.zipCode()}","${faker.address.stateAbbr()}",${price}\n`;
+        projectsData+= `${i+1},"${faker.address.streetAddress()}","${faker.address.city()}","${faker.address.stateAbbr()}","${faker.address.zipCode()}",${price}\n`;
     }
     
     
