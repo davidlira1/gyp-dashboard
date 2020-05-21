@@ -31,14 +31,23 @@ class View_Calculator extends React.Component {
         return (
             <div className="calculator-container">
                 <div>
-                    <button id="add" onClick={this.change_gypSections}>+</button>
-                    <button id="subtract" onClick={this.change_gypSections}>-</button>
-                    <p>Gypsum Concrete</p>
+                    <button className="calculator-addSubBtns"id="add" onClick={this.change_gypSections}>+</button>
+                    <button className="calculator-addSubBtns" id="subtract" onClick={this.change_gypSections}>-</button>
+                    <p className="calculator-gypTitle">Gypsum Concrete</p>
+                </div>
+                {gypSections}
+                
+                <div>
+                    <button className="calculator-addSubBtns"id="add" onClick={this.change_gypSections}>+</button>
+                    <button className="calculator-addSubBtns" id="subtract" onClick={this.change_gypSections}>-</button>
+                    <p className="calculator-gypTitle">LightWeight Concrete</p>
                 </div>
 
-                {gypSections}
 
-                <button onClick={() => this.props.set_appState({view: 'View_Proposal'})}>Proposal</button>
+
+                
+
+                <button className="calculator-proposalBtn" onClick={() => this.props.set_appState({view: 'View_Proposal'})}>Proposal</button>
             </div>
         )       
     }

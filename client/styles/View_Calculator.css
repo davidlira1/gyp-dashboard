@@ -1,11 +1,50 @@
+.calculator-addSubBtns {
+    width: 20px;
+} 
+ 
+ .calculator-gypTitle {
+    font-size: 26px;
+    display: inline-block;
+    margin-left: 10px;
+ }
+
+.calculator-form {
+    margin: 20px 0 0;
+    display: flex;
+}
+
 .calculator-container {
     margin: 20px 20px 0;
 }
 
 .calculator-section {
     display:flex;
+    
 }
 
 .calculator-section > label {
    width: 100px;
+}
+
+.calcultator-section > * {
+    height: 25px;
+}
+
+.calculator-valueBox {
+    width: 160px;
+}
+
+.calculator-proposalBtn {
+    margin: 50px 0 0;
+}
+
+.calculator-gypResults {
+    margin: 0 0 0 20px;
+    border-collapse: collapse;
+}
+
+.calculator-gypResults tr > * {
+    border: 1px solid rgb(121, 120, 124);
+    width: 100px;
+    height: 25px;
 }
