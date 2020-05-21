@@ -13,7 +13,7 @@ class View_Projects extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://18.144.38.149:3000/projects/1/*')
+        fetch('http://3.101.75.130:3000/projects/1/*')
         .then(response => response.json())
         .then(results => {
             console.log(results);
@@ -32,7 +32,7 @@ class View_Projects extends React.Component {
 
     search_project(ev) {
         ev.preventDefault();
-        fetch(`http://18.144.38.149:3000/projects/0/${this.state.input_search}`)
+        fetch(`http://3.101.75.130:3000/projects/0/${this.state.input_search}`)
         .then(response => response.json())
         .then(results => {
             this.setState(

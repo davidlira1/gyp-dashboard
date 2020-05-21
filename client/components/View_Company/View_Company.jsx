@@ -10,7 +10,7 @@ class View_Company extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/company/')
+        fetch('http://3.101.75.130:3000/company/')
         .then(response => {
             return response.json();
         })

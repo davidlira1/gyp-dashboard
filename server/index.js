@@ -27,17 +27,19 @@ app.get('/projects/:page/:street', (req, res) => {
     })
 })
 
-app.get('/project/:street', (req, res) => {
-    var { street } = req.params;
-    query.getProject(street)
-    .then(result => {
-        console.log(result.rows)
-        res.status(200).send(result.rows);
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    })
-})
+// app.get('/project/:street', (req, res) => {
+//     var { street } = req.params;
+//     query.getProject(street)
+//     .then(result => {
+//         console.log(result.rows)
+//         res.status(200).send(result.rows);
+//     })
+//     .catch(err => {
+//         res.status(400).send(err);
+//     })
+// })
+
+
 
 app.listen(port, (err) => {
     if (err) console.error(err);

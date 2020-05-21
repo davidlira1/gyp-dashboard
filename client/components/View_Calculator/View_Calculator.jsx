@@ -1,4 +1,5 @@
 // import Projects from './Projects';
+import './../../styles/View_Calculator.css'
 
 class View_Calculator extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class View_Calculator extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="calculator-container">
                 <h1>Calculator</h1>
                 <form >
                     <label>SF
