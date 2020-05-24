@@ -1,0 +1,3 @@
+//componet loads and on component di dmount start checking time. since we're doing minutes....check ever y30 seconds.'
+//check every 15 seconds...
+//if time === 10mins

@@ -1,53 +1,86 @@
-import Gyp from './Gyp';
+import GypAssembly from './GypAssembly';
 import './../../styles/View_Calculator.css'
 
 class View_Calculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            gypSections: 0
+            gypAssemblies: [
+                {
+                    'gypThick': 1.25,
+                    'smThick': .25,
+                    'floors': [
+                        {
+                            'floor' : '2nd Floor',
+                            'SF' : 24000,
+                        },
+                        {
+                            'floor' : '3rd Floor',
+                            'SF' : 22000
+                        },
+                        {
+                            'floor' : '4th Floor',
+                            'SF' : 18000
+                        } 
+                    ]
+                },
+                {
+                    'gypThick': 1.25,
+                    'smThick': .25,
+                    'floors': []
+                }
+            ]
         }
-        this.change_gypSections = this.change_gypSections.bind(this);
-        
+        this.addRem_gypAssembly = this.addRem_gypAssembly.bind(this);
+        this.change_calculatorState = this.change_calculatorState.bind(this);
     }
 
+    change_calculatorState(key, id, newValue) {
+        if(key === 'gypAssemblies') {
+            var updatedGypAssemblies = this.state.gypAssemblies.map((gypAssembly,idx) => {
+                console.log(idx, id, newValue)
+                return idx === id ? newValue : gypAssembly;
+            });
+            console.log('*', updatedGypAssemblies)
+            this.setState({
+                gypAssemblies: updatedGypAssemblies
+            })
+        }
+    }
 
-    change_gypSections(ev) {
+    addRem_gypAssembly(ev) {
         var action = ev.currentTarget.id;
-        console.log(action);
-        var newGypSections = action === 'add' ? ++this.state.gypSections : --this.state.gypSections;
-    
-        this.setState({gypSections: newGypSections})
-         
+        var gypAssemblies = this.state.gypAssemblies;
+        var newGypAssemblies = action === 'add' 
+                               ? gypAssemblies.concat({floors: []})
+                               : gypAssemblies.filter((gypAssembly, idx) => idx !== gypAssemblies.length - 1 );
+
+        this.setState({gypAssemblies: newGypAssemblies})
     }
 
     render() {
-        console.log(this.state.gypSections)
-        var gypSections = [];
-        for (var i = 0; i < this.state.gypSections; i++) {
-            gypSections.push(<Gyp />);
-        }
-
         return (
             <div className="calculator-container">
                 <div>
-                    <button className="calculator-addSubBtns"id="add" onClick={this.change_gypSections}>+</button>
-                    <button className="calculator-addSubBtns" id="subtract" onClick={this.change_gypSections}>-</button>
+                    <button className="calculator-addSubBtns"id="add" onClick={this.addRem_gypAssembly}>+</button>
+                    <button className="calculator-addSubBtns" id="subtract" onClick={this.addRem_gypAssembly}>-</button>
                     <p className="calculator-gypTitle">Gypsum Concrete</p>
                 </div>
-                {gypSections}
                 
-                <div>
-                    <button className="calculator-addSubBtns"id="add" onClick={this.change_gypSections}>+</button>
+                {this.state.gypAssemblies.map((gypAssembly, idx) => {
+                    return <GypAssembly id={idx} 
+                                        gypAssembly={gypAssembly} 
+                                        change_calculatorState={this.change_calculatorState}/>
+                })}
+
+                {/* <div>
+                    <button className="calculator-addSubBtns" id="add" onClick={this.change_gypSections}>+</button>
                     <button className="calculator-addSubBtns" id="subtract" onClick={this.change_gypSections}>-</button>
                     <p className="calculator-gypTitle">LightWeight Concrete</p>
                 </div>
 
 
-
-                
-
-                <button className="calculator-proposalBtn" onClick={() => this.props.set_appState({view: 'View_Proposal'})}>Proposal</button>
+                <button className="calculator-proposalBtn" onClick={() => this.props.set_appState({view: 'View_Proposal'})}>Proposal</button> */}
             </div>
         )       
     }
