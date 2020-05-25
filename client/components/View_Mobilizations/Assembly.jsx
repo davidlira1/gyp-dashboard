@@ -7,10 +7,20 @@ class Assembly extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            toggled: false,
+            toggledSign: '+'
         }
-        this.assembly = this.props.gypAssemblies[this.props.gypAssembly]; //this worked
+        this.assembly = this.props.gypAssemblies[this.props.gypAssembly]; 
+        this.toggle_floors = this.toggle_floors.bind(this);
     }
 
+    toggle_floors() {
+        var toggledSign = this.state.toggledSign === '+' ? '-' : '+';
+        this.setState({
+            toggled: !this.state.toggled,
+            toggledSign
+        })
+    }
     
     render() {
         var { type } = this.assembly;
@@ -23,18 +33,24 @@ class Assembly extends React.Component {
         return (
             <div className="assembly-container">
                 <div className="assembly-header">
-                    <div className="assembly-section">{this.assembly.section}</div>
-                    {title}
-                    {amount}
+                    <div className="assembly-info">
+                        <div className="assembly-section">{this.assembly.section}</div>
+                        {title}
+                        {amount}
+                    </div>
+                    <button className="toggle-floors" onClick={this.toggle_floors}>{this.state.toggledSign}</button>
+                    
                 </div>
                 
+
                 {this.assembly.floors.map((floor, idx) => {
                     return <Floor
                                 key={idx}
                                 gypAssemblies={this.props.gypAssemblies}
                                 gypAssembly={this.props.gypAssembly}
                                 floor={idx}
-                                change_appState={this.props.change_appState}/>
+                                change_appState={this.props.change_appState}
+                                toggled={this.state.toggled}/>
                 })}
             </div>
         )

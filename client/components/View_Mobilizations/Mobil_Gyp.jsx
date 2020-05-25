@@ -46,8 +46,10 @@ class Mobil_Gyp extends React.Component {
     }
 
     render() {
+
+        var mobilContainer = this.props.toggled ? 'mobil-container' : 'mobil-container hide';
         return (
-            <div className="mobil-container">
+            <div className={mobilContainer}>
                 <div>{`${ordinal(this.props.mobil + 1)} Mobilization`}</div>
                 <input type="text" id="SF" value={`${commas(this.mobil.SF)} SF`} onChange={this.change_input}/>
                 <Table className="mobil-table" rows={ [ ['Bags', 'Tons', 'Per Foam'],

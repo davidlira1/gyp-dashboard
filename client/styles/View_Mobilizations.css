@@ -2,6 +2,10 @@
     border: none;
 }
 
+body {
+    background-color: #edf2f6;
+}
+
 .view {
     background-color: #edf2f6;
     padding-top: 40px;
@@ -21,8 +25,10 @@ td {
 }
 
 .assembly-container {
-    margin: 0 0 26px;
+    margin: 0 0 36px;
     color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .assembly-header {
@@ -31,9 +37,14 @@ td {
     padding: 20px 30px;
     display: flex;
     color: white;
+    justify-content: space-between;
 }
 
-.assembly-header > div {
+.assembly-info {
+    display: flex;
+}
+
+.assembly-info > div {
     margin-right: 30px;
 }
 
@@ -47,23 +58,29 @@ td {
 
 .floor-header {
     display: flex;
+    justify-content: space-between;
+
 }
 
-.floor-header > div {
+.floor-info {
+    display: flex;
+}
+
+.floor-info > div {
     margin-right: 30px;
 }
 
 .mobil-container {
     margin: 0 0 16px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    background-color: #d9e4ea;
+    background-color: #dee6eb;
     border: 1px solid black;
     padding: 10px;
     color: black;
 }
 
 input {
-    background-color: #d9e4ea;
+    background-color: #dee6eb;
 
 }
 
@@ -73,4 +90,24 @@ input {
     width: 20px;
     cursor: pointer;
     outline: none;
+}
+
+
+.hide {
+    display: none;
+}
+
+.toggle-floors {
+    background-color: transparent;
+    color: white;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
+}
+
+.toggle-mobils {
+    background-color: transparent;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
 }
