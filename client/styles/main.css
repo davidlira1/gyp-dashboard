@@ -11,13 +11,14 @@
     text-align: center;
     padding: 24px 0;
     font-size: 26px;
-    color: rgb(28, 105, 206);
+    color: #e9ecf0;
+    background-color: #354052;
 }
 
 .nav {
     display: flex;   
-    background-color: rgb(28, 105, 206);
-    color: white;
+    background-color: #354052;
+    color: #e9ecf0;
     padding: 10px;
     
 }

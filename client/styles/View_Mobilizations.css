@@ -1,0 +1,76 @@
+* {
+    border: none;
+}
+
+.view {
+    background-color: #edf2f6;
+    padding-top: 40px;
+}
+
+table, tr, td {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.mobilizations-container {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.assembly-container {
+    margin: 0 0 26px;
+    color: black;
+}
+
+.assembly-header {
+    background-color: #6d7f93;
+    height: 60px;
+    padding: 20px 30px;
+    display: flex;
+    color: white;
+}
+
+.assembly-header > div {
+    margin-right: 30px;
+}
+
+.floor-container {
+    margin: 0 0 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    color: black;
+}
+
+.floor-header {
+    display: flex;
+}
+
+.floor-header > div {
+    margin-right: 30px;
+}
+
+.mobil-container {
+    margin: 0 0 16px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    background-color: #d9e4ea;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+}
+
+input {
+    background-color: #d9e4ea;
+
+}
+
+.addRem-button {
+    margin: 10px 0;
+    background-color: #d9e4ea;
+    width: 20px;
+    cursor: pointer;
+    outline: none;
+}

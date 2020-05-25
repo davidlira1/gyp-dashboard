@@ -4,6 +4,7 @@ import View_Project from './View_Project/View_Project';
 import View_Calculator from './View_Calculator/View_Calculator';
 import View_Proposal from './View_Proposal/View_Proposal';
 import View_Company from './View_Company/View_Company';
+import View_Mobilizations from './View_Mobilizations/VIew_Mobilizations';
 import '../styles/main.css';
 
 class App extends React.Component {
@@ -43,6 +44,8 @@ class App extends React.Component {
             'View_Proposal':         <View_Proposal
                                         project={this.state.currentProject}/>,
             'View_Company':         <View_Company
+                                        />,
+            'View_Mobilizations':  <View_Mobilizations
                                         />
         }
 
@@ -57,11 +60,14 @@ class App extends React.Component {
                         <li onClick={() => this.setState({view: 'View_Dashboard'})}>Dashboard</li>
                         <li onClick={() => this.setState({view: 'View_Projects'})}>Projects</li>
                         <li onClick={() => this.setState({view: 'View_Companies'})}>Companies</li>
+                        <li onClick={() => this.setState({view: 'View_Mobilizations'})}>Mobilizations</li>
                     </ul>
                 </nav>
 
-
-                {View}
+                <div className="view">
+                    {View}
+                </div>
+                
             
             </div>
         )
